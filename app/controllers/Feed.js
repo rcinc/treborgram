@@ -13,7 +13,13 @@ $.cameraButtonClicked = function(_event) {
 photoSource ({
 	success : function(event) {
 		processImage(event.media, function(_photoResp){
-			photoObject = _photoResp;
+			var row = Alloy.createController('feedRow', photsResp);
+			if ($.feedTable.getData().length === 0) {
+				$.feedTable.setData([]);
+				$.feedTable.appendRow(row.getView(), true);
+			} else {
+				$.feedTable.insertRowBefore(0,row.getView(), true);
+			}
 		});
 },
 	cancel : function(){
@@ -37,4 +43,5 @@ function processImage(_mediaObject, _callback) {
 		title : "Sample Photo " + new Date()
 	};
 	_callback(photoObject);
+	};
 };

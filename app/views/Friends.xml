@@ -1,6 +1,7 @@
 <Alloy>
 	<Tab title="Friends">
 		<Window title="Friends">
+			<TableView></TableView>
 			<Label>This is a Friend tab</Label>
 		</Window>
 	</Tab>
