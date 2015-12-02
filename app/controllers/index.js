@@ -4,13 +4,13 @@ function doOpen(){
 		var menuItem = null;
 		
 		activity.onCreateOptionsMenu = function(e)	{
-			if ($.tabGroup.activeTab,title === "Feed") {
+			if ($.tabGroup.activeTab.title === "Feed") {
 				
 				menuItem = e.menu.add({
-					itemId : "PHOTO",
+					//itemId : "Photo",
 					title : "Take Photo",
 					showAsAction : Ti.Android.SHOW_AS_ACTION_ALWAYS,
-					icon : Ti.Android.R.Drawable.ic_menu_camera
+					icon : Ti.Android.R.drawable.ic_menu_camera
 				});
 				menuItem.addEventListener('click', function(e){
 					$.feedController.cameraButtonClicked();
